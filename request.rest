@@ -1,7 +1,6 @@
 ###
 
 GET http://localhost:3000/comments
-
 Content-Type: application/json
 
 {
@@ -10,7 +9,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/comments/673a0aa378ac5542f3880b1a
+GET http://localhost:3000/comments/673a23072c01a63c16b23be6
 
 ###
 
@@ -19,15 +18,14 @@ Content-Type: application/json
 
 {
     "author": "Yoni",
-    "content": "hey, this is my first comment",
+    "content": "seems to be a very generic comment",
     "postId": "67310669e54ac50b7beee619"
 }
 
 
 ###
 
-PUT http://localhost:3000/comments/673a0aa378ac5542f3880b1a
-
+PUT http://localhost:3000/comments/673a23072c01a63c16b23be6
 Content-Type: application/json
 
 {
@@ -36,6 +34,6 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/comments/673a0a9178ac5542f3880b17
+DELETE http://localhost:3000/comments/673a5c09be4940984f1080d9
 
 ###

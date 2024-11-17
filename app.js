@@ -10,9 +10,8 @@ db.once("open", function () {
   console.log("Connected to the database");
 });
 
-const bodyParser = require("body-parser");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 const commentRouter = require("./routes/commentRouter");
 app.use("/comments", commentRouter);
