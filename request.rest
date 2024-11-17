@@ -1,0 +1,41 @@
+###
+
+GET http://localhost:3000/comments
+
+Content-Type: application/json
+
+{
+    "postId": "67310669e54ac50b7beee619"
+}
+
+###
+
+GET http://localhost:3000/comments/673a0aa378ac5542f3880b1a
+
+###
+
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+    "author": "Yoni",
+    "content": "hey, this is my first comment",
+    "postId": "67310669e54ac50b7beee619"
+}
+
+
+###
+
+PUT http://localhost:3000/comments/673a0aa378ac5542f3880b1a
+
+Content-Type: application/json
+
+{
+    "content": "hey, this is my second comment"
+}
+
+###
+
+DELETE http://localhost:3000/comments/673a0a9178ac5542f3880b17
+
+###
