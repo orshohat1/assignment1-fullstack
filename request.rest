@@ -1,11 +1,7 @@
 ###
 
-GET http://localhost:3000/comments
+GET http://localhost:3000/comments/postComments/67310669e54ac50b7beee619
 Content-Type: application/json
-
-{
-    "postId": "67310669e54ac50b7beee619"
-}
 
 ###
 
