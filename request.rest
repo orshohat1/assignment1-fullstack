@@ -1,0 +1,35 @@
+###
+
+GET http://localhost:3000/comments/postComments/67310669e54ac50b7beee619
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/comments/673a23072c01a63c16b23be6
+
+###
+
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+    "author": "Yoni",
+    "content": "fdsfsd",
+    "postId": "67310669e54ac50b7beee619"
+}
+
+
+###
+
+PUT http://localhost:3000/comments/673a23072c01a63c16b23be6
+Content-Type: application/json
+
+{
+    "content": "hey, this is my second comment"
+}
+
+###
+
+DELETE http://localhost:3000/comments/673a5c09be4940984f1080d9
+
+###
