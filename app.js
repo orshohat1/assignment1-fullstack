@@ -14,7 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
 const commentRouter = require("./routes/commentRouter");
+const postRouter = require("./routes/postRouter");
 app.use("/comments", commentRouter);
+app.use("/posts", postRouter)
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
