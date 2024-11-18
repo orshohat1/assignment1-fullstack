@@ -3,7 +3,7 @@ const router = express.Router();
 
 const commentController = require("../controllers/CommentController");
 
-router.get("/", commentController.getAllPostComments);
+router.get("/postComments/:postId", commentController.getAllPostComments);
 
 router.get("/:id", commentController.getCommentById);
 
