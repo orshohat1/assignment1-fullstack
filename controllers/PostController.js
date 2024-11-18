@@ -46,9 +46,9 @@ class PostController {
 
     // Get post by Sender ID
     static async getPostBySenderId(req, res) {
-        const { senderId } = req.params;
+        const { sender } = req.query;
         try {
-            const posts = await Post.find({ owner: senderId });
+            const posts = await Post.find({ owner: sender });
             res.status(200).json(posts);
         } catch (err) {
             res.status(500).json({ error: "Server error" });

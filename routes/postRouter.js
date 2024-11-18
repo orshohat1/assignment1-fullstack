@@ -21,9 +21,9 @@ router.get("/", PostController.getAllPosts);
 
 router.get("/:id", PostController.getPostById);
 
-router.get("/sender/:senderId", PostController.getPostBySenderId);
+router.get("/", PostController.getPostBySenderId);
 
-router.put("/",
+router.put("/:id",
     check("title")
     .notEmpty()
     .isString(),

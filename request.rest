@@ -34,3 +34,36 @@ DELETE http://localhost:3000/comments/673a5c09be4940984f1080d9
 
 ###
 
+###
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "First Post",
+    "content": "This is the content of the first post",
+    "owner": "12345"
+}
+
+###
+
+GET http://localhost:3000/posts
+
+###
+
+GET http://localhost:3000/posts/673b4bdf40897a580d6183b8
+
+###
+
+GET http://localhost:3000/posts?sender=12345
+
+###
+
+PUT http://localhost:3000/posts/673b4bdf40897a580d6183b8
+Content-Type: application/json
+
+{
+    "title": "Updated Title",
+    "content": "Updated content of the post",
+    "owner": "12345"
+}
