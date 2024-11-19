@@ -34,15 +34,13 @@ DELETE http://localhost:3000/comments/673a5c09be4940984f1080d9
 
 ###
 
-###
-
 POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
     "title": "First Post",
     "content": "This is the content of the first post",
-    "owner": "12345"
+    "author": "12345"
 }
 
 ###
@@ -65,5 +63,5 @@ Content-Type: application/json
 {
     "title": "Updated Title",
     "content": "Updated content of the post",
-    "owner": "12345"
+    "author": "12345"
 }

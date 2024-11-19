@@ -11,7 +11,7 @@ router.post("/",
     check("content")
     .notEmpty()
     .isString(),
-    check("owner")
+    check("author")
     .notEmpty()
     .isString(),
     PostController.addPost
@@ -30,7 +30,7 @@ router.put("/:id",
     check("content")
     .notEmpty()
     .isString(),
-    check("owner")
+    check("author")
     .notEmpty()
     .isString(),
     PostController.updatePost

@@ -10,9 +10,9 @@ class PostController {
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        const { title, content, owner } = req.body;
+        const { title, content, author } = req.body;
         try {
-            const post = new Post({ title, content, owner });
+            const post = new Post({ title, content, author });
             await post.save();
             res.status(201).json(post);
         } catch (err) {
@@ -48,7 +48,7 @@ class PostController {
     static async getPostBySenderId(req, res) {
         const { sender } = req.query;
         try {
-            const posts = await Post.find({ owner: sender });
+            const posts = await Post.find({ author: sender });
             res.status(200).json(posts);
         } catch (err) {
             res.status(500).json({ error: "Server error" });
@@ -63,12 +63,12 @@ class PostController {
         }
 
         const { id } = req.params;
-        const { title, content, owner } = req.body;
+        const { title, content, author } = req.body;
 
         try {
             const post = await Post.findByIdAndUpdate(
                 id,
-                { title, content, owner },
+                { title, content, author },
                 { new: true, runValidators: true }
             );
             if (!post) {
