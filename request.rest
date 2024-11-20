@@ -9,7 +9,7 @@ GET http://localhost:3000/comments/673a23072c01a63c16b23be6
 
 ###
 
-POST http://localhost:3000/comments/67310669e54ac50b7beee619
+POST http://localhost:3000/comments/post/67310669e54ac50b7beee619
 Content-Type: application/json
 
 {
