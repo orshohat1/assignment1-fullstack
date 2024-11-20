@@ -2,8 +2,9 @@ const Comment = require("../models/Comment");
 const { ObjectId } = require("mongoose");
 
 const createComment = async (req, res) => {
-    console.log(req.body);
+    const { postId } = req.params;
     const { content } = req.body;
+    req.body.postId = postId;
     if (!content || content.trim() === '') {
         return res.status(400).send("comment is empty");
     }
