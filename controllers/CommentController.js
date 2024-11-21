@@ -3,13 +3,13 @@ const { ObjectId } = require("mongoose");
 
 const createComment = async (req, res) => {
     const { postId } = req.params;
-    const { content } = req.body;
-    req.body.postId = postId;
+    const { author, content } = req.body;
     if (!content || content.trim() === '') {
         return res.status(400).send("comment is empty");
     }
     try {
-        const comment = await Comment.create(req.body);
+        const comment = new Comment({ author, content, postId });
+        await comment.save();
         res.status(201).send(comment);
     } catch (err) {
         res.status(400).send(err.message);
