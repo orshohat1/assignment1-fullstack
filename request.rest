@@ -9,13 +9,12 @@ GET http://localhost:3000/comments/673a23072c01a63c16b23be6
 
 ###
 
-POST http://localhost:3000/comments
+POST http://localhost:3000/comments/post/67310669e54ac50b7beee619
 Content-Type: application/json
 
 {
     "author": "Yoni",
-    "content": "fdsfsd",
-    "postId": "67310669e54ac50b7beee619"
+    "content": "happy comment"
 }
 
 
@@ -30,7 +29,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/comments/673a5c09be4940984f1080d9
+DELETE http://localhost:3000/comments/673b2ad3f133ae244e68a63a
 
 ###
 
