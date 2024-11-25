@@ -20,10 +20,18 @@ class PostController {
         }
     };
 
-    // Get all posts
-    static async getAllPosts(req, res) {
+    
+    // Get posts (all or by sender)
+    static async getPosts(req, res) {
+        const { sender } = req.query;
         try {
-            const posts = await Post.find();
+            const filter = sender ? { author: sender } : {};
+            const posts = await Post.find(filter);
+
+            if (sender && posts.length === 0) {
+                return res.status(404).json({ message: `No posts found for user ID: ${sender}` });
+            }
+
             res.status(200).json(posts);
         } catch (err) {
             res.status(500).json({ error: "Server error" });
@@ -39,17 +47,6 @@ class PostController {
                 return res.status(404).json({ error: "Post not found" });
             }
             res.status(200).json(post);
-        } catch (err) {
-            res.status(500).json({ error: "Server error" });
-        }
-    }
-
-    // Get post by Sender ID
-    static async getPostBySenderId(req, res) {
-        const { sender } = req.query;
-        try {
-            const posts = await Post.find({ author: sender });
-            res.status(200).json(posts);
         } catch (err) {
             res.status(500).json({ error: "Server error" });
         }
