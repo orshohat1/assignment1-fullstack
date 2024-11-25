@@ -17,11 +17,9 @@ router.post("/",
     PostController.addPost
 );
 
-router.get("/", PostController.getAllPosts);
+router.get("/", PostController.getPosts);
 
 router.get("/:id", PostController.getPostById);
-
-router.get("/", PostController.getPostBySenderId);
 
 router.put("/:id",
     check("title")
