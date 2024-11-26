@@ -1,5 +1,5 @@
 const Comment = require("../models/Comment");
-const { ObjectId } = require("mongoose");
+const mongoose = require("mongoose");
 
 const createComment = async (req, res) => {
     const { postId } = req.params;
@@ -28,15 +28,19 @@ const createComment = async (req, res) => {
 
 const getAllPostComments = async (req, res) => {
     const { postId } = req.params;
-    try {
-        const comments = await Comment.find({
-            postId: postId
-        });
-        res.status(200).send({comments});
-    } catch (err) {
-        res.status(400).send(err.message);
+  
+    if (!mongoose.Types.ObjectId.isValid(postId)) {
+      return res.status(400).json({ error: "Invalid Post ID" });
     }
-    };
+  
+    try {
+      const comments = await Comment.find({ postId: postId });
+  
+      res.status(200).json({ comments });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
 
 const editComment = async (req, res) => {
     const { id } = req.params;
