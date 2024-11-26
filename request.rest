@@ -5,7 +5,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/comments/673a23072c01a63c16b23be6
+GET http://localhost:3000/comments/6745c2ddc5e6479dc82b8cb9
 
 ###
 
@@ -13,23 +13,23 @@ POST http://localhost:3000/comments/post/67310669e54ac50b7beee619
 Content-Type: application/json
 
 {
-    "author": "Yoni",
+    "author": "Yoni12345",
     "content": "happy comment"
 }
 
 
 ###
 
-PUT http://localhost:3000/comments/673a23072c01a63c16b23be6
+PUT http://localhost:3000/comments/6745c2ddc5e6479dc82b8cb9
 Content-Type: application/json
 
 {
-    "content": "hey, this is my second comment"
+    "content": "hey, this is my edited comment"
 }
 
 ###
 
-DELETE http://localhost:3000/comments/673b2ad3f133ae244e68a63a
+DELETE http://localhost:3000/comments/6745c2ddc5e6479dc82b8cb9
 
 ###
 
@@ -37,7 +37,7 @@ POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "title": "First Post",
+    "title": "First Post!!!",
     "content": "This is the content of the first post",
     "author": "12345"
 }
@@ -48,7 +48,7 @@ GET http://localhost:3000/posts
 
 ###
 
-GET http://localhost:3000/posts/673b4bdf40897a580d6183b8
+GET http://localhost:3000/posts/6745c378e7c0d5804f5278ce
 
 ###
 
@@ -56,11 +56,11 @@ GET http://localhost:3000/posts?sender=12345
 
 ###
 
-PUT http://localhost:3000/posts/673b4bdf40897a580d6183b8
+PUT http://localhost:3000/posts/6745c378e7c0d5804f5278ce
 Content-Type: application/json
 
 {
     "title": "Updated Title",
     "content": "Updated content of the post",
-    "author": "12345"
+    "author": "123456"
 }
